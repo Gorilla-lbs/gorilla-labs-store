@@ -1,0 +1,35 @@
+GORILLA LABS — $0 WEBSITE ROUTE
+
+COST
+- Cloudflare Pages free hosting.
+- Free address ending in .pages.dev.
+- GitHub free account and public repository.
+- Pages CMS free editing interface.
+- No paid hosting or paid website builder.
+- A custom gorillalabs.com.au domain is NOT free; leave it until later if desired.
+
+FILES
+- index.html: complete mobile-friendly storefront with original logo embedded.
+- products/catalogue.json: catalogue starts empty.
+- site-settings.json: tagline, home text, WhatsApp and social links.
+- .pages.yml: Pages CMS editing configuration.
+
+FREE PUBLISHING STEPS
+1. Create a free GitHub account.
+2. Create a PUBLIC repository named gorilla-labs-store.
+3. Upload every file and folder from this ZIP into the repository root.
+4. Create a free Cloudflare account. Choose Workers & Pages > Create > Pages > Connect to Git.
+5. Select gorilla-labs-store and deploy. Cloudflare gives a free *.pages.dev address.
+6. Open app.pagescms.org and sign in with GitHub.
+7. Install Pages CMS for your repository. It reads .pages.yml.
+8. In Pages CMS, open Products to add, edit, or delete products and upload photos.
+9. Open Store settings to add WhatsApp number, Instagram URL and Facebook URL.
+10. Saving changes writes to GitHub; Cloudflare automatically redeploys the site.
+
+ORDER MODEL AND LIMITATIONS
+This is a static catalogue/cart. The cart runs in the visitor's browser and builds a WhatsApp
+order enquiry. There is no online card payment, server-side order database, inventory control,
+or customer account system. Payment remains directly arranged with you via WhatsApp/socials.
+
+A free pages.dev address is provided; your own custom domain is a separate paid registration.
+Third-party free services may change terms or suspend accounts. Keep a copy of your website files.
