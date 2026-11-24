@@ -19,12 +19,38 @@ content:
             label: Product name
             type: string
             required: true
-          - name: strength
-            label: Strength
-            type: string
-          - name: volume
-            label: Volume
-            type: string
+          - name: description
+            label: Product description
+            type: text
+          - name: image
+            label: Product image
+            type: image
+            options:
+              media: media
+              path: media
+              extensions: [jpg, jpeg, png, webp]
           - name: category
             label: Category
             type: string
+          - name: price
+            label: Price (AUD)
+            type: number
+            description: Enter the regular selling price in Australian dollars.
+          - name: sale_price
+            label: Sale price (AUD)
+            type: number
+            description: Optional discounted price. Leave blank when not on sale.
+          - name: strength
+            label: Strength / specification
+            type: string
+          - name: volume
+            label: Size / volume
+            type: string
+          - name: featured
+            label: Featured product
+            type: boolean
+            default: false
+          - name: available
+            label: Available to display
+            type: boolean
+            default: true
