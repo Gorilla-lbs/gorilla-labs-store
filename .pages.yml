@@ -1,1 +1,30 @@
-media:
+media: media
+
+content:
+  - name: product_catalogue
+    label: Product catalogue
+    type: file
+    path: catalogue.json
+    format: json
+    fields:
+      - name: products
+        label: Products
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        fields:
+          - name: name
+            label: Product name
+            type: string
+            required: true
+          - name: strength
+            label: Strength
+            type: string
+          - name: volume
+            label: Volume
+            type: string
+          - name: category
+            label: Category
+            type: string
