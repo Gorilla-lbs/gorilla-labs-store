@@ -1,1 +1,64 @@
-{"products":[]}
+{
+  "products": [
+    {
+      "name": "Bac-Water",
+      "strength": "10 mg",
+      "volume": "10 mL",
+      "category": "Product reference"
+    },
+    {
+      "name": "BPC-157",
+      "strength": "10 mg",
+      "volume": "10 mL",
+      "category": "Product reference"
+    },
+    {
+      "name": "GHK-CU",
+      "strength": "100 mg",
+      "volume": "10 mL",
+      "category": "Product reference"
+    },
+    {
+      "name": "MOTS-C",
+      "strength": "10 mg",
+      "volume": "10 mL",
+      "category": "Product reference"
+    },
+    {
+      "name": "MT-2",
+      "strength": "10 mg",
+      "volume": "10 mL",
+      "category": "Product reference"
+    },
+    {
+      "name": "RT10",
+      "strength": "10 mg",
+      "volume": "10 mL",
+      "category": "Product reference"
+    },
+    {
+      "name": "RT20",
+      "strength": "20 mg",
+      "volume": "10 mL",
+      "category": "Product reference"
+    },
+    {
+      "name": "Semaglutide",
+      "strength": "10 mg",
+      "volume": "10 mL",
+      "category": "Product reference"
+    },
+    {
+      "name": "Sustanon",
+      "strength": "250 mg/mL",
+      "volume": "10 mL",
+      "category": "Product reference"
+    },
+    {
+      "name": "TB-500",
+      "strength": "10 mg",
+      "volume": "10 mL",
+      "category": "Product reference"
+    }
+  ]
+}
