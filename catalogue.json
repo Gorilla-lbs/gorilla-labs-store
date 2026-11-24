@@ -4,61 +4,79 @@
       "name": "Bac-Water",
       "strength": "10 mg",
       "volume": "10 mL",
-      "category": "Product reference"
+      "category": "PEPTIDE"
     },
     {
       "name": "BPC-157",
       "strength": "10 mg",
       "volume": "10 mL",
-      "category": "Product reference"
+      "category": "PEPTIDE"
     },
     {
       "name": "GHK-CU",
       "strength": "100 mg",
       "volume": "10 mL",
-      "category": "Product reference"
+      "category": "PEPTIDE"
     },
     {
       "name": "MOTS-C",
       "strength": "10 mg",
       "volume": "10 mL",
-      "category": "Product reference"
+      "category": "PEPTIDE"
     },
     {
       "name": "MT-2",
       "strength": "10 mg",
       "volume": "10 mL",
-      "category": "Product reference"
+      "category": "PEPTIDE"
     },
     {
       "name": "RT10",
       "strength": "10 mg",
       "volume": "10 mL",
-      "category": "Product reference"
+      "category": "PEPTIDE"
     },
     {
       "name": "RT20",
       "strength": "20 mg",
       "volume": "10 mL",
-      "category": "Product reference"
+      "category": "PEPTIDE"
     },
     {
       "name": "Semaglutide",
       "strength": "10 mg",
       "volume": "10 mL",
-      "category": "Product reference"
+      "category": "PEPTIDE"
     },
     {
       "name": "Sustanon",
       "strength": "250 mg/mL",
       "volume": "10 mL",
-      "category": "Product reference"
+      "category": "OIL"
     },
     {
       "name": "TB-500",
       "strength": "10 mg",
       "volume": "10 mL",
-      "category": "Product reference"
+      "category": "PEPTIDE"
+    },
+    {
+      "name": "Testosterone enanthate ",
+      "strength": "250mg",
+      "volume": "10ml",
+      "category": "OIL"
+    },
+    {
+      "name": "Testosterone Suspension",
+      "strength": "100mg",
+      "volume": "10ml",
+      "category": "OIL"
+    },
+    {
+      "name": "TRENABOL",
+      "strength": "100mg",
+      "volume": "10ml",
+      "category": "oil"
     }
   ]
 }
