@@ -2,81 +2,146 @@
   "products": [
     {
       "name": "Bac-Water",
+      "description": "bacteriostatic water",
+      "image": "/media/1000148884.png",
+      "category": "PEPTIDE",
+      "price": 20,
       "strength": "10 mg",
       "volume": "10 mL",
-      "category": "PEPTIDE"
+      "featured": false,
+      "active": true
     },
     {
       "name": "BPC-157",
+      "description": "BPC-157 (Body Protective Compound-157) is a synthetic peptide—a lab-made chain of 15 amino acids—modeled after a protein found in human gastric juice. (HEALING)",
+      "image": "/media/1000148885.png",
+      "category": "PEPTIDE",
+      "price": 90,
       "strength": "10 mg",
       "volume": "10 mL",
-      "category": "PEPTIDE"
+      "featured": false,
+      "active": true
     },
     {
       "name": "GHK-CU",
+      "description": "GHK-Cu (glycyl-L-histidyl-L-lysine copper) is a naturally occurring copper-binding tripeptide found in human plasma, saliva, and urine. Discovered in 1973, it acts as a copper carrier and signaling molecule involved in tissue repair, regeneration, and remodeling. (HEALING/REPAIR)",
+      "image": "/media/1000148886.png",
+      "category": "PEPTIDE",
+      "price": 110,
       "strength": "100 mg",
       "volume": "10 mL",
-      "category": "PEPTIDE"
+      "featured": false,
+      "active": true
     },
     {
       "name": "MOTS-C",
+      "description": "MOTS-c (Mitochondrial ORF of the 12S rRNA Type-C) is a 16-amino-acid peptide encoded by the mitochondrial genome that helps regulate cellular energy and metabolic stress. Discovered in 2015, it acts as a signaling molecule that responds to exercise and metabolic stress to influence glucose and fat metabolism. (HEALTH/STAMINA)",
+      "image": "/media/1000148887.png",
+      "category": "PEPTIDE",
+      "price": 110,
       "strength": "10 mg",
       "volume": "10 mL",
-      "category": "PEPTIDE"
+      "featured": false,
+      "active": true
     },
     {
       "name": "MT-2",
+      "description": "Melanotan II (MT-2) is a synthetic, lab-made cyclic peptide of seven amino acids that mimics the natural hormone alpha-melanocyte-stimulating hormone (α-MSH). (TANNING/LIBIDO)",
+      "image": "/media/1000148888.png",
+      "category": "PEPTIDE",
+      "price": 90,
       "strength": "10 mg",
       "volume": "10 mL",
-      "category": "PEPTIDE"
+      "featured": false,
+      "active": true
     },
     {
       "name": "RT10",
+      "description": "Retatrutide (also known as LY-3437943) is an investigational, once-weekly injectable peptide being developed by Eli Lilly and Company for obesity, type 2 diabetes, and related metabolic conditions. It is a \"triple agonist\" that activates three hormone receptors—GLP-1, GIP, and glucagon—and is currently in Phase III clinical trials rather than approved for commercial or therapeutic use. (WEIGHT)",
+      "image": "/media/1000148889.png",
+      "category": "PEPTIDE",
+      "price": 110,
       "strength": "10 mg",
       "volume": "10 mL",
-      "category": "PEPTIDE"
+      "featured": false,
+      "active": true
     },
     {
       "name": "RT20",
+      "description": "Retatrutide (also known as LY-3437943) is an investigational, once-weekly injectable peptide being developed by Eli Lilly and Company for obesity, type 2 diabetes, and related metabolic conditions. It is a \"triple agonist\" that activates three hormone receptors—GLP-1, GIP, and glucagon—and is currently in Phase III clinical trials rather than approved for commercial or therapeutic use. (WEIGHT)",
+      "image": "/media/1000148890.png",
+      "category": "PEPTIDE",
+      "price": 140,
       "strength": "20 mg",
       "volume": "10 mL",
-      "category": "PEPTIDE"
+      "featured": false,
+      "active": true
     },
     {
       "name": "Semaglutide",
+      "description": "Semaglutide is a GLP-1 receptor agonist prescription medication used alongside diet and exercise to manage type 2 diabetes and chronic weight. (WEIGHT)",
+      "image": "/media/1000148891.png",
+      "category": "PEPTIDE",
+      "price": 120,
       "strength": "10 mg",
       "volume": "10 mL",
-      "category": "PEPTIDE"
+      "featured": false,
+      "active": true
     },
     {
-      "name": "Sustanon",
+      "name": "Sustanon 250mg",
+      "description": "Sustanon 250 is an injectable androgenic medicine containing four testosterone esters in oil, primarily prescribed to treat confirmed testosterone deficiency (hypogonadism) in men. (GORILLA-LBS)",
+      "image": "/media/1000148892.png",
+      "category": "OIL",
+      "price": 150,
       "strength": "250 mg/mL",
       "volume": "10 mL",
-      "category": "OIL"
+      "featured": false,
+      "active": true
     },
     {
       "name": "TB-500",
+      "description": "TB-500 (Ac-LKKTETQ) is a synthetic, seven-amino-acid peptide fragment based on the active sequence (amino acids 17–23) of thymosin beta-4, a naturally occurring protein involved in cell movement and tissue repair. It is widely promoted online for injury recovery and wound healing. (HEALING)",
+      "image": "/media/1000148893.png",
+      "category": "PEPTIDE",
+      "price": 90,
       "strength": "10 mg",
       "volume": "10 mL",
-      "category": "PEPTIDE"
+      "featured": false,
+      "active": true
     },
     {
       "name": "Testosterone enanthate ",
+      "description": "Testosterone enanthate is a long-acting, injectable esterified form of the natural hormone testosterone used primarily as replacement therapy for low or absent testosterone.Biological activity: Once cleaved in the body, free testosterone binds directly to androgen receptors or converts into dihydrotestosterone (DHT) or estradiol to support male sex characteristics, muscle mass, and bone density.",
+      "image": "/media/1000148743.png",
+      "category": "OIL",
+      "price": 130,
       "strength": "250mg",
       "volume": "10ml",
-      "category": "OIL"
+      "featured": false,
+      "active": true
     },
     {
       "name": "Testosterone Suspension",
+      "description": "• Unesterified Formula: Because no ester group is attached, the body absorbs it quickly once injected.\n• Rapid Onset & Short Duration: It enters the bloodstream rapidly and clears much faster than long-acting oil-based esters (such as testosterone cypionate, enanthate, or undecanoate), causing sharper peaks and quicker drops in blood levels.",
+      "image": "/media/1000148895.png",
+      "category": "OIL",
+      "price": 130,
       "strength": "100mg",
       "volume": "10ml",
-      "category": "OIL"
+      "featured": false,
+      "active": true
     },
     {
       "name": "TRENABOL",
+      "description": "Trenbolone is a potent synthetic anabolic-androgenic steroid (AAS) in the nandrolone group, originally developed for veterinary use in livestock to increase muscle growth and appetite. It is not approved for human medical use. (GORILLA-LBS)",
+      "image": "/media/1000148896.png",
+      "category": "oil",
+      "price": 150,
       "strength": "100mg",
       "volume": "10ml",
-      "category": "oil"
+      "featured": false,
+      "active": true
     }
   ]
 }
