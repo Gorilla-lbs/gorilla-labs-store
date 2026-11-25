@@ -49,8 +49,8 @@ content:
             label: Featured product
             type: boolean
             default: false
-          - name: available
-            label: Available to display
+          - name: active
+            label: Display this product
             type: boolean
             default: true
 
