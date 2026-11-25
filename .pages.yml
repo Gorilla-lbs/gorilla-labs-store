@@ -69,6 +69,9 @@ content:
       - name: hero_text
         label: Homepage introduction
         type: text
+      - name: contact_email
+        label: Contact email
+        type: string
       - name: whatsapp_number
         label: WhatsApp number (international format, digits only)
         type: string
