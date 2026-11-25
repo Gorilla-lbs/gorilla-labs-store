@@ -6,10 +6,33 @@ export default {
 
     if (url.pathname === "/" && contentType.includes("text/html")) {
       return new HTMLRewriter()
-        .on('a[href*="contact"], a[href*="#contact"]', {
+        .on("body", {
           element(element) {
-            element.setAttribute("href", "mailto:gorillalbs@gmail.com");
-            element.removeAttribute("target");
+            element.append(`<script>
+              (() => {
+                const email = "mailto:gorillalbs@gmail.com";
+                const wireContact = () => {
+                  document.querySelectorAll("a, button").forEach((el) => {
+                    if ((el.textContent || "").trim().replace(/\\s+/g, " ").toLowerCase() === "contact") {
+                      if (el.tagName === "A") {
+                        el.setAttribute("href", email);
+                        el.removeAttribute("target");
+                      } else {
+                        el.addEventListener("click", (event) => {
+                          event.preventDefault();
+                          window.location.href = email;
+                        });
+                      }
+                    }
+                  });
+                };
+                if (document.readyState === "loading") {
+                  document.addEventListener("DOMContentLoaded", wireContact);
+                } else {
+                  wireContact();
+                }
+              })();
+            </script>`, { html: true });
           }
         })
         .transform(response);
