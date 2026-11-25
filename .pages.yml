@@ -4,7 +4,7 @@ content:
   - name: product_catalogue
     label: Product catalogue
     type: file
-    path: catalogue.json
+    path: products/catalogue.json
     format: json
     fields:
       - name: products
@@ -53,3 +53,28 @@ content:
             label: Available to display
             type: boolean
             default: true
+
+  - name: store_settings
+    label: Store settings
+    type: file
+    path: site-settings.json
+    format: json
+    fields:
+      - name: tagline
+        label: Store tagline
+        type: string
+      - name: hero_heading
+        label: Homepage heading
+        type: string
+      - name: hero_text
+        label: Homepage introduction
+        type: text
+      - name: whatsapp_number
+        label: WhatsApp number (international format, digits only)
+        type: string
+      - name: instagram_url
+        label: Instagram URL
+        type: string
+      - name: facebook_url
+        label: Facebook URL
+        type: string
