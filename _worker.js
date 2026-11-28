@@ -46,7 +46,6 @@ fetch('/site-settings.json').then(r=>r.ok?r.json():null).then(s=>{
     return new HTMLRewriter()
       .on("head", { element(element) { element.append(redesign.slice(0, redesign.indexOf("<section id=\"gl-our-story\">")), { html: true }); } })
       .on("footer", { element(element) { element.before(redesign.slice(redesign.indexOf("<section id=\"gl-our-story\">")), { html: true }); } })
-      .on("body", { element(element) { element.append(redesign.slice(redesign.indexOf("<section id=\"gl-our-story\">")), { html: true }); } })
       .transform(response);
   }
 };
