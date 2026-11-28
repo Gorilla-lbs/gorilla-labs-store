@@ -11,6 +11,40 @@ export default {
             element.append(`<script>
               (() => {
                 const email = "mailto:gorillalbs@gmail.com";
+                const whatsapp = "https://wa.me/61416300006";
+
+                const addWhatsAppButton = () => {
+                  if (document.getElementById("gl-whatsapp-contact")) return;
+                  const button = document.createElement("a");
+                  button.id = "gl-whatsapp-contact";
+                  button.href = whatsapp;
+                  button.target = "_blank";
+                  button.rel = "noopener noreferrer";
+                  button.setAttribute("aria-label", "Chat with Gorilla Labs on WhatsApp");
+                  button.textContent = "WhatsApp";
+                  Object.assign(button.style, {
+                    position: "fixed",
+                    right: "18px",
+                    bottom: "18px",
+                    zIndex: "2147483647",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    padding: "13px 20px",
+                    borderRadius: "999px",
+                    background: "#25D366",
+                    color: "#ffffff",
+                    font: "600 15px/1.2 Arial, sans-serif",
+                    textDecoration: "none",
+                    boxShadow: "0 3px 14px rgba(0,0,0,.28)"
+                  });
+                  document.body.appendChild(button);
+                };
+                if (document.readyState === "loading") {
+                  document.addEventListener("DOMContentLoaded", addWhatsAppButton, { once: true });
+                } else {
+                  addWhatsAppButton();
+                }
                 const normalise = (value) => (value || "").replace(/\\s+/g, " ").trim().toLowerCase();
 
                 document.addEventListener("click", (event) => {
