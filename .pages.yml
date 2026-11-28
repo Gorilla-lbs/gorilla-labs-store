@@ -29,16 +29,14 @@ content:
               path: media
               extensions: [jpg, jpeg, png, webp]
           - name: category
-            label: Category
+            label: Product category
             type: string
           - name: price
             label: Price (AUD)
             type: number
-            description: Enter the regular selling price in Australian dollars.
           - name: sale_price
             label: Sale price (AUD)
             type: number
-            description: Optional discounted price. Leave blank when not on sale.
           - name: strength
             label: Strength / specification
             type: string
@@ -61,7 +59,7 @@ content:
     format: json
     fields:
       - name: tagline
-        label: Store tagline
+        label: Brand tagline
         type: string
       - name: hero_heading
         label: Homepage heading
@@ -69,11 +67,17 @@ content:
       - name: hero_text
         label: Homepage introduction
         type: text
+      - name: story_heading
+        label: Our Story heading
+        type: string
+      - name: story_text
+        label: Our Story — write your brand story here
+        type: text
       - name: contact_email
         label: Contact email
         type: string
       - name: whatsapp_number
-        label: WhatsApp number (international format, digits only)
+        label: WhatsApp number
         type: string
       - name: instagram_url
         label: Instagram URL
