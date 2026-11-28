@@ -23,7 +23,9 @@ a:hover{color:#7acaff!important}
 #gl-our-story p{font-size:16px;line-height:1.8;color:#334e6b}
 #gl-our-story .gl-storybox{padding:28px;background:linear-gradient(145deg,#fff,#e8f2fc);border:1px solid #9bbfe2;box-shadow:0 18px 48px #163c641c;border-left:4px solid #087cff}
 @media(max-width:700px){#gl-our-story .gl-wrap{grid-template-columns:1fr;gap:18px}}
-.gl-approved-mascot{display:block;width:min(220px,42vw);height:auto;max-height:118px;object-fit:contain;filter:drop-shadow(0 4px 15px #078bff55)}\n@media(max-width:700px){.gl-approved-mascot{width:min(190px,45vw);max-height:104px}}\n</style>`;
+.gl-approved-mascot{display:block;width:min(220px,42vw);height:auto;max-height:118px;object-fit:contain;filter:drop-shadow(0 4px 15px #078bff55)}
+@media(max-width:700px){.gl-approved-mascot{width:min(190px,45vw);max-height:104px}}
+</style>`;
 
   const mascotScript = `
 <script id="gl-install-approved-mascot">
@@ -61,7 +63,8 @@ a:hover{color:#7acaff!important}
 <script>fetch('/site-settings.json').then(r=>r.ok?r.json():null).then(s=>{if(!s)return;if(s.story_heading)document.getElementById('gl-story-heading').textContent=s.story_heading;if(s.story_text&&s.story_text.trim())document.getElementById('gl-story-text').textContent=s.story_text}).catch(()=>{});</script>`;
   return new HTMLRewriter()
    .on("head",{element(e){e.append(css,{html:true})}})
-   .on("footer",{element(e){e.before(story,{html:true})}})\n   .on("body",{element(e){e.append(mascotScript,{html:true})}})
+   .on("footer",{element(e){e.before(story,{html:true})}})
+   .on("body",{element(e){e.append(mascotScript,{html:true})}})
    .transform(response);
  }
 };
