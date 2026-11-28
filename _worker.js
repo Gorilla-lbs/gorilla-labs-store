@@ -16,28 +16,51 @@ export default {
                 const normalise = (value) => (value || "").replace(/\\s+/g, " ").trim().toLowerCase();
 
                 document.addEventListener("click", (event) => {
-                  const path = typeof event.composedPath === "function" ? event.composedPath() : [event.target];
-                  const clickedOrder = path.some((node) => {
-                    if (!node || !node.textContent || !node.tagName) return false;
-                    const text = normalise(node.textContent);
-                    return ["order", "order now", "place order", "checkout", "complete order", "submit order", "send order via whatsapp"].includes(text) || text.includes("send order via whatsapp");
-                  });
-                  const clickedContact = path.some((node) => {
-                    if (!node || !node.textContent || !node.tagName) return false;
-                    const text = normalise(node.textContent);
-                    return text === "contact" ||
-                      text === "get in touch" ||
-                      text === "contact gorilla labs" ||
-                      (text.includes("get in touch") && text.length < 180) ||
-                      (text.includes("contact gorilla labs") && text.length < 180);
-                  });
+                  const target = event.target && event.target.closest
+                    ? event.target.closest("button, a, [role='button'], input[type='submit']")
+                    : null;
+                  const targetText = normalise(target && (target.innerText || target.textContent || target.value));
 
-                  if (clickedOrder) {
+                  // Only intercept the actual checkout button. Never match text on a
+                  // surrounding cart container, which would also catch Add to Bag.
+                  if (target && (targetText === "send order via whatsapp" || targetText === "submit order" || targetText === "checkout")) {
                     event.preventDefault();
                     event.stopPropagation();
                     if (typeof event.stopImmediatePropagation === "function") event.stopImmediatePropagation();
-                    window.location.href = whatsapp;
-                  } else if (clickedContact) {
+
+                    const removeButtons = Array.from(document.querySelectorAll("button, a, [role='button']"))
+                      .filter((node) => normalise(node.innerText || node.textContent) === "remove");
+                    const items = removeButtons.map((removeButton) => {
+                      const row = removeButton.parentElement && removeButton.parentElement.parentElement
+                        ? removeButton.parentElement.parentElement
+                        : removeButton.parentElement;
+                      if (!row) return "";
+                      return (row.innerText || row.textContent || "")
+                        .replace(/\\bremove\\b/ig, "")
+                        .replace(/\\s+/g, " ")
+                        .trim();
+                    }).filter(Boolean);
+
+                    const message = [
+                      "Hi Gorilla Labs, I'd like to place an order:",
+                      "",
+                      ...(items.length ? items.map((item) => "- " + item) : ["Please confirm the items in my bag."]),
+                      "",
+                      "Please confirm availability and the total. Thank you."
+                    ].join("\\n");
+                    window.location.href = whatsapp + "?text=" + encodeURIComponent(message);
+                    return;
+                  }
+
+                  const clickedContact = target && (
+                    targetText === "contact" ||
+                    targetText === "get in touch" ||
+                    targetText === "contact gorilla labs" ||
+                    targetText.includes("get in touch") ||
+                    targetText.includes("contact gorilla labs")
+                  );
+
+                  if (clickedContact) {
                     event.preventDefault();
                     event.stopPropagation();
                     if (typeof event.stopImmediatePropagation === "function") event.stopImmediatePropagation();
