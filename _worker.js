@@ -23,7 +23,36 @@ a:hover{color:#7acaff!important}
 #gl-our-story p{font-size:16px;line-height:1.8;color:#334e6b}
 #gl-our-story .gl-storybox{padding:28px;background:linear-gradient(145deg,#fff,#e8f2fc);border:1px solid #9bbfe2;box-shadow:0 18px 48px #163c641c;border-left:4px solid #087cff}
 @media(max-width:700px){#gl-our-story .gl-wrap{grid-template-columns:1fr;gap:18px}}
-</style>`;
+.gl-approved-mascot{display:block;width:min(220px,42vw);height:auto;max-height:118px;object-fit:contain;filter:drop-shadow(0 4px 15px #078bff55)}\n@media(max-width:700px){.gl-approved-mascot{width:min(190px,45vw);max-height:104px}}\n</style>`;
+
+  const mascotScript = `
+<script id="gl-install-approved-mascot">
+(function(){
+ const h=document.querySelector('header');
+ if(!h || h.querySelector('.gl-approved-mascot')) return;
+ const leaves=[...h.querySelectorAll('*')].filter(e=>e.children.length===0 && e.textContent.trim()==='G');
+ let target=null;
+ for(const leaf of leaves){
+   let node=leaf;
+   for(let i=0;i<6 && node && node!==h;i++,node=node.parentElement){
+     const t=(node.innerText||node.textContent||'').replace(/\\s+/g,' ').trim();
+     if(/GORILLA/i.test(t)&&/LABS/i.test(t)){target=node;break;}
+   }
+   if(target)break;
+ }
+ if(!target){
+   const links=[...h.querySelectorAll('a')];
+   target=links.find(e=>/GORILLA/i.test(e.textContent)&&/LABS/i.test(e.textContent));
+ }
+ if(target){
+   target.innerHTML='<img class="gl-approved-mascot" src="/media/gorilla-mascot-electric-blue.webp" alt="GORILLA LABS electric blue gorilla mascot logo">';
+   target.setAttribute('aria-label','GORILLA LABS');
+   target.style.display='flex';
+   target.style.alignItems='center';
+   target.style.maxWidth='220px';
+ }
+})();
+</script>`;
   const story = `
 <section id="gl-our-story"><div class="gl-wrap">
 <div><div class="gl-kicker">THE PEOPLE & PURPOSE</div><h2>OUR STORY</h2><p>The thinking, ambition and inspiration behind GORILLA LABS.</p></div>
@@ -32,7 +61,7 @@ a:hover{color:#7acaff!important}
 <script>fetch('/site-settings.json').then(r=>r.ok?r.json():null).then(s=>{if(!s)return;if(s.story_heading)document.getElementById('gl-story-heading').textContent=s.story_heading;if(s.story_text&&s.story_text.trim())document.getElementById('gl-story-text').textContent=s.story_text}).catch(()=>{});</script>`;
   return new HTMLRewriter()
    .on("head",{element(e){e.append(css,{html:true})}})
-   .on("footer",{element(e){e.before(story,{html:true})}})
+   .on("footer",{element(e){e.before(story,{html:true})}})\n   .on("body",{element(e){e.append(mascotScript,{html:true})}})
    .transform(response);
  }
 };
