@@ -20,7 +20,7 @@ export default {
                   const clickedOrder = path.some((node) => {
                     if (!node || !node.textContent || !node.tagName) return false;
                     const text = normalise(node.textContent);
-                    return ["order", "order now", "place order", "checkout", "complete order", "submit order"].includes(text);
+                    return ["order", "order now", "place order", "checkout", "complete order", "submit order", "send order via whatsapp"].includes(text) || text.includes("send order via whatsapp");
                   });
                   const clickedContact = path.some((node) => {
                     if (!node || !node.textContent || !node.tagName) return false;
