@@ -31,10 +31,20 @@ export default {
                     const removeButtons = Array.from(document.querySelectorAll("button, a, [role='button']"))
                       .filter((node) => normalise(node.innerText || node.textContent) === "remove");
                     const items = removeButtons.map((removeButton) => {
-                      const row = removeButton.parentElement && removeButton.parentElement.parentElement
-                        ? removeButton.parentElement.parentElement
-                        : removeButton.parentElement;
-                      if (!row) return "";
+                      // Find the smallest cart row containing this one Remove control.
+                      // Using a larger parent can capture the entire bag once per item.
+                      let row = removeButton.parentElement;
+                      while (row && row !== document.body) {
+                        const removeCount = Array.from(row.querySelectorAll("button, a, [role='button']"))
+                          .filter((node) => normalise(node.innerText || node.textContent) === "remove").length;
+                        const rowText = (row.innerText || row.textContent || "")
+                          .replace(/\\bremove\\b/ig, "")
+                          .replace(/\\s+/g, " ")
+                          .trim();
+                        if (removeCount === 1 && rowText) break;
+                        row = row.parentElement;
+                      }
+                      if (!row || row === document.body) return "";
                       return (row.innerText || row.textContent || "")
                         .replace(/\\bremove\\b/ig, "")
                         .replace(/\\s+/g, " ")
