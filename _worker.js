@@ -25,34 +25,42 @@ a:hover{color:#7acaff!important}
 @media(max-width:700px){#gl-our-story .gl-wrap{grid-template-columns:1fr;gap:18px}}
 .gl-approved-mascot{display:block;width:min(220px,42vw);height:auto;max-height:118px;object-fit:contain;filter:drop-shadow(0 4px 15px #078bff55)}
 @media(max-width:700px){.gl-approved-mascot{width:min(190px,45vw);max-height:104px}}
+#gl-centrepiece{position:relative;isolation:isolate;overflow:hidden;min-height:760px;display:grid;place-items:center;padding:54px 22px 48px;text-align:center;background:radial-gradient(ellipse at 50% 36%,#174f91 0%,#0a2446 42%,#050d1c 78%);border-bottom:1px solid #6bbcff55}
+#gl-centrepiece:before,#gl-centrepiece:after{content:"";position:absolute;z-index:-1;border:1px solid #58aaff38;border-radius:50%;width:min(88vw,980px);aspect-ratio:1;left:50%;top:46%;transform:translate(-50%,-50%);box-shadow:0 0 70px #087cff18,inset 0 0 70px #087cff12}
+#gl-centrepiece:after{width:min(70vw,760px);border-color:#d4edff22}
+.gl-centre-inner{width:min(1120px,100%);margin:auto;display:flex;align-items:center;flex-direction:column}
+.gl-centre-eyebrow{display:flex;align-items:center;gap:16px;color:#a9d8ff;font-size:12px;letter-spacing:.28em;font-weight:800}
+.gl-centre-eyebrow span{display:block;width:44px;height:1px;background:linear-gradient(90deg,transparent,#56baff)}
+.gl-centre-emblem{display:block;width:min(760px,92vw);height:auto;max-height:490px;object-fit:contain;margin:18px auto 2px;filter:drop-shadow(0 24px 45px #007bff55)}
+#gl-centrepiece h1{font-size:clamp(38px,6vw,76px);line-height:.98;letter-spacing:-.045em;margin:12px 0;color:#f6fbff!important;text-shadow:0 4px 28px #168cff55}
+#gl-centrepiece p{max-width:680px;margin:12px auto 24px;color:#c8ddf4;font-size:clamp(16px,2vw,21px);line-height:1.65}
+.gl-centre-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.gl-centre-actions a{display:inline-flex;align-items:center;justify-content:center;min-width:190px;padding:16px 24px;border:1px solid #91d0ff;background:linear-gradient(110deg,#075ee0,#159bff 60%,#b6e5ff);color:#06172c!important;text-decoration:none;font-size:12px;font-weight:900;letter-spacing:.15em;box-shadow:0 8px 28px #087cff44}
+.gl-centre-actions a:last-child{background:#0b2340;color:#eaf6ff!important}
+.gl-centre-foot{margin-top:36px;padding-top:18px;border-top:1px solid #9ccfff35;width:min(650px,90%);font-size:10px;letter-spacing:.3em;color:#91b7db}
+.gl-centre-foot i{font-style:normal;color:#4cb6ff;padding:0 12px}
+@media(max-width:700px){#gl-centrepiece{min-height:690px;padding:45px 20px 38px}.gl-centre-emblem{width:min(560px,105vw);max-height:350px;margin:24px auto 8px}.gl-centre-eyebrow{font-size:9px;letter-spacing:.16em;gap:8px}.gl-centre-eyebrow span{width:22px}.gl-centre-actions{width:100%;flex-direction:column}.gl-centre-actions a{width:100%;box-sizing:border-box}.gl-centre-foot{font-size:9px;letter-spacing:.2em}}
 </style>`;
 
   const mascotScript = `
-<script id="gl-install-approved-mascot">
+<script id="gl-centrepiece-hero">
 (function(){
- const h=document.querySelector('header');
- if(!h || h.querySelector('.gl-approved-mascot')) return;
- const leaves=[...h.querySelectorAll('*')].filter(e=>e.children.length===0 && e.textContent.trim()==='G');
- let target=null;
- for(const leaf of leaves){
-   let node=leaf;
-   for(let i=0;i<6 && node && node!==h;i++,node=node.parentElement){
-     const t=(node.innerText||node.textContent||'').replace(/\\s+/g,' ').trim();
-     if(/GORILLA/i.test(t)&&/LABS/i.test(t)){target=node;break;}
-   }
-   if(target)break;
+ function install(){
+  if(document.getElementById('gl-centrepiece')) return;
+  const oldHeading=[...document.querySelectorAll('h1')].find(e=>/BUILT TO STAND APART/i.test(e.textContent));
+  if(oldHeading){
+   let old=oldHeading;
+   while(old.parentElement && old.parentElement!==document.body && !/^(SECTION|MAIN)$/.test(old.tagName)) old=old.parentElement;
+   if(old && old!==document.body) old.style.display='none';
+  }
+  const hero=document.createElement('section');
+  hero.id='gl-centrepiece';
+  hero.innerHTML='<div class="gl-centre-inner"><div class="gl-centre-eyebrow"><span></span> GORILLA LABS — DISTINCTIVE BY DESIGN <span></span></div><img class="gl-centre-emblem" src="/media/gorilla-mascot-electric-blue.webp" alt="GORILLA LABS electric blue gorilla mascot and emblem"><h1>BUILT TO STAND APART.</h1><p>A bold identity shaped by precision, character and an uncompromising attention to detail.</p><div class="gl-centre-actions"><a href="#collection-preview">EXPLORE THE BRAND</a><a href="#gl-our-story">OUR STORY</a></div><div class="gl-centre-foot">PRECISION <i>•</i> CHARACTER <i>•</i> GORILLA LABS</div></div>';
+  const main=document.querySelector('main');
+  const header=document.querySelector('header');
+  if(main) main.prepend(hero); else if(header) header.after(hero); else document.body.prepend(hero);
  }
- if(!target){
-   const links=[...h.querySelectorAll('a')];
-   target=links.find(e=>/GORILLA/i.test(e.textContent)&&/LABS/i.test(e.textContent));
- }
- if(target){
-   target.innerHTML='<img class="gl-approved-mascot" src="/media/gorilla-mascot-electric-blue.webp" alt="GORILLA LABS electric blue gorilla mascot logo">';
-   target.setAttribute('aria-label','GORILLA LABS');
-   target.style.display='flex';
-   target.style.alignItems='center';
-   target.style.maxWidth='220px';
- }
+ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',install,{once:true}); else install();
 })();
 </script>`;
   const story = `
