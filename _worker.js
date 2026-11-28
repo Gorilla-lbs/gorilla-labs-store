@@ -16,7 +16,7 @@ header{background:linear-gradient(180deg,#050d19,#0c2038)!important;border-color
 .hero .wrap{position:relative;z-index:1}
 .hero h1{color:#f7fbff!important;text-shadow:0 5px 24px #168cff33}
 .hero .kicker,.kicker{color:#8ecfff!important}
-.hero-logo{display:block;width:min(460px,88vw)!important;max-height:390px!important;object-fit:contain!important;margin:28px auto 0!important;filter:drop-shadow(0 18px 32px #087cff55)!important}
+.hero-logo{display:none!important}
 .logo{filter:drop-shadow(0 4px 12px #168cff33)}
 .btn{background:linear-gradient(110deg,#0868d7,#168fff 58%,#b8e5ff)!important;color:#061426!important;border:1px solid #b9e3ff!important;box-shadow:0 8px 24px #087cff35!important}
 .btn.alt{background:transparent!important;color:#eaf6ff!important;border:1px solid #8ecaff!important}
