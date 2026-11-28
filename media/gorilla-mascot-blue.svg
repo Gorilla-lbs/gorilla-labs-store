@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 360">
+<defs><linearGradient id="fur" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".42" stop-color="#8ea4bd"/><stop offset="1" stop-color="#17263a"/></linearGradient><linearGradient id="steel" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset=".45" stop-color="#9eb8d5"/><stop offset="1" stop-color="#f7fbff"/></linearGradient><filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<path d="M55 155Q35 65 125 45Q210 -4 295 45Q385 68 365 155L340 230Q320 290 210 300Q100 290 80 230Z" fill="#06152a" stroke="#1e9aff" stroke-width="9" filter="url(#glow)"/>
+<path d="M74 166Q43 94 118 57Q210 12 302 57Q377 94 346 166L322 226Q296 276 210 282Q124 276 98 226Z" fill="url(#fur)" stroke="#0a1729" stroke-width="10"/>
+<path d="M96 155Q100 91 154 82L178 117L142 169L108 190Z M324 155Q320 91 266 82L242 117L278 169L312 190Z" fill="#26384d"/>
+<path d="M119 144Q147 111 190 139L180 174Q145 184 119 162Z M301 144Q273 111 230 139L240 174Q275 184 301 162Z" fill="#091425"/>
+<path d="M133 146Q157 126 184 146L178 159Q154 165 133 153Z M287 146Q263 126 236 146L242 159Q266 165 287 153Z" fill="#118cff" filter="url(#glow)"/>
+<path d="M184 128Q210 111 236 128L251 178Q237 204 210 205Q183 204 169 178Z" fill="#34485d"/>
+<path d="M111 190Q145 163 180 184L210 210L240 184Q275 163 309 190L292 250Q266 279 210 280Q154 279 128 250Z" fill="#18283b" stroke="#d6e4f3" stroke-width="5"/>
+<path d="M150 210Q180 190 210 216Q240 190 270 210L260 247Q235 262 210 261Q185 262 160 247Z" fill="#b8c7d7"/>
+<path d="M179 226Q210 240 241 226L230 248Q210 258 190 248Z" fill="#071323"/>
+<path d="M190 233Q210 240 230 233" stroke="#fff" stroke-width="4" fill="none"/>
+<path d="M105 72L145 40L168 77 M315 72L275 40L252 77" fill="none" stroke="#dcecff" stroke-width="8"/>
+<text x="210" y="335" font-family="Arial,sans-serif" font-size="27" font-weight="900" text-anchor="middle" fill="url(#steel)" letter-spacing="4">GORILLA LABS</text>
+</svg>
